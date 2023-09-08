@@ -1,0 +1,17 @@
+app:
+  name: hello world
+  port: 9000
+database:
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    user: user
+    password: password
+  sqlite:
+    db_path: /tmp/test_file.db
+log:
+  level: debug
+  filename: /tmp/info.log
+  maxsize: 1
+  max_age: 30
+  max_backups: 5
