@@ -7,7 +7,7 @@ import (
 )
 
 func Success(c *gin.Context, data interface{}) {
-	c.JSON(http.StatusOK, vo.Response{
+	c.JSON(http.StatusOK, vo.ResponseVO{
 		0,
 		data,
 		"ok",
@@ -15,7 +15,7 @@ func Success(c *gin.Context, data interface{}) {
 }
 
 func Fail(c *gin.Context, errorCode int, msg string) {
-	c.JSON(http.StatusOK, vo.Response{
+	c.JSON(http.StatusOK, vo.ResponseVO{
 		errorCode,
 		nil,
 		msg,

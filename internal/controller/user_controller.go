@@ -3,6 +3,7 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"golang-restful-api-framework/internal/service"
+	"golang-restful-api-framework/internal/utils"
 )
 
 type UserController interface {
@@ -18,5 +19,6 @@ func InitUserController(userService service.UserService) UserControllerImpl {
 }
 
 func (u UserControllerImpl) GetUserById(c *gin.Context) {
-	u.svc.GetUserById(c)
+	userVO := u.svc.GetUserById(c)
+	utils.Success(c, userVO)
 }
